@@ -37,3 +37,11 @@ print(1 + 1 > 1 + 2 and 3 + 2 < 3 - 1 or 5 and not True)
 in:存在(包含)
 not：不存在
 """
+str1 ="qiersdffff"
+
+print("sd" in str1)
+print("sds" in str1)
+print("s d f" in str1)
+
+# num1=12345
+# print(1 in num1) #数字不能用于包含语句
