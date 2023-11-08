@@ -117,4 +117,57 @@ set1 = {22, 22, 33, 45}
 print(list(set1))
 
 
+"""
+列表的切片：分割一个列表，只提取其中某一个片段出来
+变量名[start:end:step]
+start：从哪里开始
+end：到哪里结束
+step：步长，每隔几个元素，获取一次 -- 默认为1，并且可以省略
+"""
+
+lst3 = [100, 3.14, True, "七夜", [1, 2, 3, 4]]
+
+print(lst3[0:2])  # [100, 3.14]
+print(lst3[0:4])  # [100, 3.14, True, "七夜"]
+print(lst3[1:4])  # [3.14, True, '七夜']
+print(lst3[1:1])
+
+print(lst3[:3])  # 默认从0开始
+print(lst3[0:])  # 不写end,默认取全部值
+print(lst3[0::2])  # 取偶数下标对应的值，步长的概念
+
+
+lst1 = [1, 2, 3, 4]
+# lst2 = lst1  # 切记不要直接变量赋值给变量，会出现问题
+lst2 = lst1[0:]
+lst2.append(5)
+print(id(lst1))
+print(id(lst2))
+
+"""
+统计元素的个数：
+count(元素具体的值) -- 判断这个元素在我们列表中有几个
+"""
+lst3 = [100, 3.14, True, "七夜", [1, 2, 3, 4, 3.14, 3.14]]
+print(lst3.count(3.14))
+
+"""
+字符串可以当做一个列表用
+切片：变量名[start:end:step]
+"""
+str1 = "hello python"
+res = str1[0]
+print(res)
+
+# 负数？ --  在python中，就是反序的意思，倒过来数第几个
+res = str1[-1]
+print(res)
+
+for i in str1:
+    print(i)
+
+# 切片
+
+res = str1[0:5:2]
+print(res)
 
