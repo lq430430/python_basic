@@ -1,5 +1,5 @@
-
 import math
+
 """
 作用域：我们定义的变量和函数在哪个范围内可用
 文件和文件之间定义的东西，一般不能直接用
@@ -14,28 +14,30 @@ import math
     局部变量在定义的时候可以直接声明为 全局变量
 """
 
+
 def fun1():
     a = 10
 
-print(a) # 是否能够打印出a的值？不能直接调用这个a变量，因为这个a只在fun1内部生效
 
+print(a)  # 是否能够打印出a的值？不能直接调用这个a变量，因为这个a只在fun1内部生效
 
 a = 10  # 全局变量
 
 
-
-
 def add():
-    b = 5 # 局部变量
+    b = 5  # 局部变量
     print(a)
 
+
 add()
+
 
 def add():
     b = 5
     global c  # 声明为全局变量，一定要先声明，后赋值
     c = 4
     print(a)
+
 
 add()
 print(c)
@@ -104,9 +106,9 @@ lambda 参数: 逻辑
 结果就是返回表达式的结果
 """
 
-
 p = math.pi
 print(p)  # 可以打印圆周率
+
 
 def fun(r):
     res = lambda r: pow(r, 2) * math.pi  # 返回的res的函数本体
@@ -118,8 +120,6 @@ print(fun(r=5))  # 打印出fun函数执行后的结果，也就是res函数执�
 res = lambda r: pow(r, 2) * math.pi
 print(res)
 print(res(r=5))
-
-
 
 """
 python中可以把函数当做变量传递
@@ -161,5 +161,37 @@ import 关键字：导入已经写好的python内容
 # import time
 # import math
 
+"""
+序列调用匿名函数
+• 我们在序列中同样可以使用匿名函数，使用匿名函数可以帮助我们进行很快的数据筛选。
+• 提示：使用内置函数filter() 函数用于过滤序列，过滤掉不符合条件的元素，返回一个迭代器对象，
+       如果要转换为列表，可以使用 list() 来转换。
+• 语法：filter(function, iterable)
+• 该接收两个参数，参数function为函数，iterable为序列，序列的每个元素作为参数传递给函数
+进行判断，然后返回 True 或 False，最后将返回 True 的元素放到新列表中。
+"""
+
+# 已知一个列表为[1,4,6,9,12,23,25,28,36,38,41,56,63,77,88,99]，找出元素值为偶数的数据，并存放在列表当中。
+lst = [1, 4, 6, 9, 12, 23, 25, 28, 36, 38, 41, 56, 63, 77, 88, 99]
 
 
+# 方式一，用普通函数实现
+def fun1(num):
+    if num % 2 == 0:
+        return num
+
+
+print(list(filter(fun1, lst)))
+
+# 方式二，用匿名函数lambda实现
+lst = [1, 4, 6, 9, 12, 23, 25, 28, 36, 38, 41, 56, 63, 77, 88, 99]
+print(list(filter(lambda x: x % 2 == 0, lst)))
+"""
+map() 映射函数：会根据提供的函数对指定序列做映射。
+语法：map(function,iterable,......)
+会根据提供的括号内函数对给出的序列做一一映射
+function为所指定的函数，iterable为所提供的序列，可为多个序列
+"""
+#案例：计算列表[1,2,3,4,5]中每个元素的平方,返回新列表
+lst1=[1,2,3,4,5]
+print(list(map(lambda x:x*x,lst1)))
