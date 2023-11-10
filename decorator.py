@@ -12,7 +12,7 @@ logging 模块是 Python 内置的标准模块，主要用于输出运行日志�
 print 将所有信息都输出到标准输出中，严重影响开发者从标准输出中查看其它数据；logging 则可以由开发者决定将信息输出到什么地方，以及怎么输出；
 和 print 相比，logging 是线程安全的。
 """
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 
 
 def fun1():
@@ -65,7 +65,7 @@ def fun3():
 # log_info(fun2)()() # fun2()
 
 # 第三种
-fun2()
+# fun2()
 """
 装饰器中的参数是不定长定参数，可以使用*args,**kwargs接收不定量的参数
 """
@@ -83,5 +83,5 @@ def fun4():
 def fun5(name,addr):
     print("姓名：{}，地址：{}".format(name,addr))
 
-fun4()
-fun5("lily","shenyang")
+# fun4()
+# fun5("lily","shenyang")
