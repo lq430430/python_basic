@@ -18,8 +18,15 @@ class Person():
     def order_food(self):
         print("我喜欢吃XXX菜")
 
+    def person(self):
+        print("self的真正身份：",self)
+
 
 Xman = Person()  # 实例化
+print(Xman.person())
+print("Xman实例对象：",Xman)
+print("Person类本身：",Person)
+print(Person.person(Person()))
 print(Xman.name)
 # print(Xman.eat())
 a=Xman.eat()
@@ -32,4 +39,14 @@ print(Xman.name)
 print("修改之前的值：{},修改之后的值:{}".format(name, Xman.name))
 print("这个对象中的name值:{}".format(Xman.name))
 
+xiaoming = Person()
+lily= Person()
+print(xiaoming.name)
+print(Person.name)
+
+xiaoming.name="sunxiaoming"
+Person.name="uuuuu"
+print(xiaoming.name)
+print(Person.name)
+print(lily.name)
 

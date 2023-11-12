@@ -12,6 +12,7 @@
 
 
 class Person():
+
     def __init__(self, name, age, sex, job):
         self.name = name
         self.age = age
@@ -33,7 +34,8 @@ class Person():
 
 xiaoming = Person("小明", 88, "women", "teacher")   #私有属性_Person__sex="women"  而不是实例xiaoming.__sex
 qiye = Person("七夜", 18, "man", "teacher")
-print(xiaoming.name)
+
+print(Person("小丽", 88, "women", "teacher").name)
 # print(xiaoming.__sex)  #AttributeError: 'Person' object has no attribute '__sex'
 xiaoming.set_job("worker")
 job=xiaoming.get_job()
