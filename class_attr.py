@@ -19,20 +19,37 @@ class Demo(object):
         self.name = name  # 实例属性，公有
         self.__age = age  # 实例属性，私有
 
-    #类属性调用
+    # 类属性调用
     def fun1(self):
         print("本类中定义的公有类属性：var =", Demo.var)
         print("本类中定义的私有类属性：__num=", Demo.__num)
+
     def fun2(self):
-        Demo.var="已修改"
-        Demo.__num=1314
+        Demo.var = "已修改"
+        Demo.__num = 1314
         print("修改后的公有类属性：var =", Demo.var)
-        print("修改后的私有类属性：__num=", Demo.__num)
+        print("修改后的私有类属性：__num:", Demo.__num)
 
+    def fun3(self):
+        self.name = "John"
+        self.__age = 66
+        print("修改后的公有实例属性：name =", self.name)
+        print("修改后的私有实例属性：__age:", self.__age)
 
-print("查看公有类属性：var =", Demo.var)
-# print("查看私有类属性：__nu, =",Demo.__num) #私有类属性不能在类外使用
+    def fun4(self):
+        print("类的内置属性，类名：", Demo.__name__)  # 内置属性，自带
+        print("类的内置属性，类的所有属性：", Demo.__dict__)  # 内置属性，自带
+
 
 d = Demo()
-d.fun2()
 d.fun1()
+d.var = "mm"
+print("在类外修改类公有属性var:", d.var)
+# print("在类外修改类私有属性__num:",d._num) #报错：AttributeError: 'Demo' object has no attribute '_num'
+d.fun2()
+d.name = "类外name"
+print("在类外修改对象公有属性var:", d.name)
+# print("在类外修改对象私有属性__age:",d.__age) #报错：AttributeError: 'Demo' object has no attribute '__age'
+# d.fun3()
+# d.fun4()
+print("在类外调用对象的内置属性:类名", d.__class__)
