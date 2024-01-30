@@ -1,8 +1,7 @@
-
 # _*_ coding:utf-8 -*_
 import requests, jsonpath
 
-#域名地址
+# 域名地址
 gateway = "http://shop-xo.hctestedu.com/index.php?s="
 
 # 公共参数 其他接口都通用
@@ -25,7 +24,7 @@ def test_login():  # 账号登录
                           params=params,
                           data=data)
     # print(rs.text)
-    token = jsonpath.jsonpath(rs.json(), "$..token") #$..token取字典中所有token放到list，rs.json()反序列化，将json格式字符串转成字典
+    token = jsonpath.jsonpath(rs.json(), "$..token")  # $..token取字典中所有token放到list，rs.json()反序列化，将json格式字符串转成字典
     return token[0]
 
 
