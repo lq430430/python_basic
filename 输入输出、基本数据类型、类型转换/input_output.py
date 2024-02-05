@@ -51,6 +51,14 @@ print("""
        sal: {}
        """.format("lily", 18, "shenyang", 500.55))
 
+name='lily'
+score_math=100
+score_chinese=85
+
+print("{0}本次考试：数学分数={1}, 语文分数={2},英语分数={1},恭喜{0}".format(name,score_math,score_chinese))
+
+
+
 """
 烤鸭店利润计算器
 计算这个烤鸭店每天的利润是多少？ -- 怎么计算？
