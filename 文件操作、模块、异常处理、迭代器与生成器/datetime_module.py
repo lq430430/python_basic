@@ -8,6 +8,7 @@ calendar模块：日历模块
 #根据给定的值，创建时间元组：datetime.datime(年、月、日、时、分、秒、微秒)
 dt=datetime.datetime(2018,6,24,16,56,45,13)
 print(dt)
+print(type(dt))
 print("now:",datetime.datetime.now())
 dt=datetime.datetime.now()
 print("year:",dt.year)

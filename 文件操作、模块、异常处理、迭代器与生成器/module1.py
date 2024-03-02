@@ -1,6 +1,8 @@
 # import decorator
-from decorator import fun1
+# from decorator import fun1
 # decorator.fun1()
+
+import exception_case
 """
  python模块（文件）也不一定非要你主动调用它才执行的。只是模块中的函数部分的定义不会在 import 时立即执行，而非函数部分的其它脚本是可以在导入时就执行的
 
@@ -14,4 +16,5 @@ if __name__ == "__main()__"
 如果py文件直接运行时(Ctrl+Shift+F10)，那么__name__默认等于字符串”__main__”;
 
 """
-fun1()
+# fun1()
+exception_case.except_finally()
