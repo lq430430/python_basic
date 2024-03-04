@@ -51,10 +51,19 @@ def gen():
         print('*************')
         i+=1
     return '没有更多数据了'
-from collections import Iterable
+
+
 def Iterator_fun():
+    try:
+        from collections.abc import Iterable,Iterator
+    except:
+        from collections import Iterable,Iterator
     list1=[1,2,5,6,7]
     print(isinstance(list1,Iterable))
+    print(isinstance(list1,Iterator))
+    print(isinstance(iter(list1),Iterator))
+
+
 if __name__ == '__main__':
     # # 得到生成器方法1
     # iter_1()
