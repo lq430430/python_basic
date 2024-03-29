@@ -42,14 +42,20 @@ class Demo(object):
 
 
 d = Demo()
+print(d)
+print(d.name)
+# print(Demo.name)#报错，类本身不能使用init中定义的实例属性
+# print(d.age)  #报错，私有实例属性不能在类外面调用，AttributeError: 'Demo' object has no attribute 'age'
+print('类公有属性：',Demo.var)
+print('类公有属性：',Demo.__num) #报错,私有类属性不能在类外调用type object 'Demo' has no attribute '__num'
 d.fun1()
 d.var = "mm"
 print("在类外修改类公有属性var:", d.var)
 # print("在类外修改类私有属性__num:",d._num) #报错：AttributeError: 'Demo' object has no attribute '_num'
 d.fun2()
 d.name = "类外name"
-print("在类外修改对象公有属性var:", d.name)
-# print("在类外修改对象私有属性__age:",d.__age) #报错：AttributeError: 'Demo' object has no attribute '__age'
-# d.fun3()
-# d.fun4()
-print("在类外调用对象的内置属性:类名", d.__class__)
+print("在类外修改实例公有属性var:", d.name)
+# print("在类外修改实例私有属性__age:",d.__age) #报错：AttributeError: 'Demo' object has no attribute '__age'
+d.fun3()
+d.fun4()
+# print("在类外调用对象的内置属性:类名", d.__class__)

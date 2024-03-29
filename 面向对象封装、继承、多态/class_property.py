@@ -28,6 +28,12 @@ class Account():
     @money.setter
     def money(self, money):
         self.__money += money
+    @property
+    def account(self):
+        return self.__account
+    @account.setter
+    def account(self,account):
+        self.__account=account
 
 """
 方式二 @property
@@ -48,5 +54,7 @@ xm = Account("10002","晓明",666)
 print("余额是：{}".format(xm.money))
 xm.money=-66
 print("修改后余额是：{}".format(xm.money))
+xm.account='acount002' #调用@account.setter,设置实例私有变量
+print('账号是{}'.format(xm.account)) #@property将account私有化变量变成get方法
 
 

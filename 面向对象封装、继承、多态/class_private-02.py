@@ -36,6 +36,11 @@ xiaoming = Person("小明", 88, "women", "teacher")   #私有属性_Person__sex=
 qiye = Person("七夜", 18, "man", "teacher")
 
 print(Person("小丽", 88, "women", "teacher").name)
+print(xiaoming.work())
+
+xiaoming.family='liaoning'
+print('xiaoming.family:',xiaoming.family)
+
 # print(xiaoming.__sex)  #AttributeError: 'Person' object has no attribute '__sex'
 xiaoming.set_job("worker")
 job=xiaoming.get_job()

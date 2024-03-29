@@ -7,8 +7,6 @@ class 类名():
 class Person():
     name = "lily"
     age = 18
-    sex = "woman"
-    addr = "shenyang"
 
     def eat(self):
         print("吃东西")   #没写return 返回空
@@ -21,32 +19,27 @@ class Person():
     def person(self):
         print("self的真正身份：",self)
 
-
 Xman = Person()  # 实例化
-print(Xman.person())
 print("Xman实例对象：",Xman)
 print("Person类本身：",Person)
-print(Person.person(Person()))
-print(Xman.name)
-# print(Xman.eat())
+print(Xman.person()) #调用实例方法后，打印方法返回值None（无返回值时）
+print('Person():',Person()) #实例对象
+print(Person.person(Person())) #只要类加()，即实例化，传入了创建的对象Person()
+
 a=Xman.eat()
 print(a)        #None
 
 name=Xman.name
 Xman.name="mary" #只影响实例的name
-print(Xman.name)
-
 print("修改之前的值：{},修改之后的值:{}".format(name, Xman.name))
-print("这个对象中的name值:{}".format(Xman.name))
-
+#
 xiaoming = Person()
-lily= Person()
-print(xiaoming.name)
-print(Person.name)
-
+lily=Person()
 xiaoming.name="sunxiaoming"
 Person.name="uuuuu"
-print(xiaoming.name)
 print(Person.name)
+print(xiaoming.name)
 print(lily.name)
+
+
 
