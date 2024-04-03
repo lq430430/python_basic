@@ -2,7 +2,7 @@
 """
 python中 包(package)和模块(module)
 包：python的文件夹
-模块：我们的文件名（不包含.py)
+package：我们的文件名（不包含.py)
 import math
 """
 import time
