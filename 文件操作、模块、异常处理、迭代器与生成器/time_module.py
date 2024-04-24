@@ -1,8 +1,8 @@
 # coding:utf-8
 """
-python中 包(package)和模块(module)
+python中 包(package_modules)和模块(module)
 包：python的文件夹
-package：我们的文件名（不包含.py)
+package_modules：我们的文件名（不包含.py)
 import math
 """
 import time

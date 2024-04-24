@@ -6,8 +6,8 @@
 """
 文件说明
 """
-# __all__=['User']  #针对from包.模块 import * 限制导入内容
-# version='1.1'
+__all__=['User']  #针对from包.模块 import * 限制导入内容
+version='1.1'
 class User:  # 用户类
     def __init__(self, username, password):
         self.username = username
@@ -20,7 +20,7 @@ class User:  # 用户类
             print('登录失败')
 
     def publish_article(self,article):
-        print(self.username,'发表了文章：',article)
+        print(self.username,'发表了文章：',article.name)
     def show(self):
         print(self.username,self.password)
 

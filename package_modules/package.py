@@ -2,7 +2,7 @@
 
 # @Time    : 2024/3/31 14:07
 # @Author  : lily
-# @File    : package.py
+# @File    : package_modules.py
 """
 使用包的方法
 """
@@ -20,7 +20,14 @@
 # a=Article('三国传','罗贯中')
 # a.show()
 
-from user.modules import version
-print(version)
+# from user.modules import version
+# print(version)
 # user2=User('admin',123456)
 # user2.show()
+
+import user  #-----user的__init__
+from user import *  #from 包名 import * 需要在__init__文件中加__all__=【】
+u=modules.User('admin',123456)
+u.show()
+
+print(test.Max) # 访问包中模块里定义的变量

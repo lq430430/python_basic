@@ -91,7 +91,7 @@ def test():
 
 
 
-print('模块名 __name__:',__name__)
+# print('模块名 __name__:',__name__)
 
 if __name__=='__main__':
     test()
